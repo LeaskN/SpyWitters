@@ -3,15 +3,15 @@
     padding: 0;
 }
 body {
-  width: 1440px;
-  background: rgb(123, 158, 158);
+  width: 10000px;
+  background: rgb(41, 54, 54);
 }
 #hexGrid {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  overflow: visible;
+  width: 100%;
   margin: 0 auto;
-  overflow: hidden;
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   list-style-type: none;
@@ -29,7 +29,7 @@ body {
   margin:0 2%;
   overflow: hidden;
   visibility: hidden;
-  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
   -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
       -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
           transform: rotate3d(0,0,1,-60deg) skewY(30deg);
@@ -64,6 +64,7 @@ body {
       -ms-transform: rotate3d(0,0,0,0deg);
           transform: rotate3d(0,0,0,0deg);
 }
+
 .innerHex:hover{
   animation: fading 3s infinite;
   -webkit-animation: fading 3s infinite;
@@ -78,11 +79,26 @@ body {
 .hex h1 {
   width: 100%;
   padding: 5%;
-  box-sizing:border-box;
+  box-sizing: border-box;
   background-color: rgba(0, 128, 128, 0.8);
   font-weight: 300;
-  bottom: 50%;
+  top: 20%;
   font-size: 1.5em;
+  z-index: 1;
+  -webkit-transform:translate3d(0,-100%,0);
+      -ms-transform:translate3d(0,-100%,0);
+          transform:translate3d(0,-100%,0);
+}
+.hex h2 {
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-weight: 300;
+  font-size: 1.5em;
+  top: 150px;
+  height: 100px;
+  line-height: fit-content;
   z-index: 1;
   -webkit-transform:translate3d(0,-100%,0);
       -ms-transform:translate3d(0,-100%,0);
